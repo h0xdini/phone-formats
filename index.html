@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="phone-input">
+        <div class="flags">
+            <ul>
+                <li class="country">
+                    <img src="./images/algeria.png" alt="hi">
+                    <p>Algeria (+213)</p>
+                </li>
+                <li class="country">
+                    <img src="./images/unitedStates.png" alt="hi">
+                    <p>United States (+1)</p>
+                </li>
+                <li class="country">
+                    <img src="./images/uruguay.png" alt="hi">
+                    <p>Urguay (+598)</p>
+                </li>
+                <li class="country">
+                    <img src="./images/germany.png" alt="hi">
+                    <p>Germany (+49)</p>
+                </li>
+            </ul>
+        </div>
+
+        <article class="toggler">
+            <img src="./images/algeria.png" id="main-image" alt="hi">
+            <span class="icon">
+                <i class="fa-solid fa-caret-down"></i>
+            </span>
+        </article>
+
+        <div class="number-container">
+            <span class="country-code">+213</span>
+            <input type="text" id="in">
+        </div>
+    </div>
+    <span class="error">Invalid phone format</span>
+    <span class="success">Valid phone format</span>
+
+    <script src="app.js"></script>
+</body>
+</html>
