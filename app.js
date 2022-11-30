@@ -37,6 +37,8 @@ input.addEventListener("keydown", function(e) {
             input.value = formatPhoneNumberUrguay(input.value)
         } else if (countryCode.innerHTML === '+213') {
             input.value = formatPhoneNumberAlgeria(input.value)
+        } else if (countryCode.innerHTML === '+81') {
+            input.value = formatPhoneNumberJapan(input.value)
         }
     }
 })
@@ -57,8 +59,7 @@ function formatPhoneNumberUSA(phoneNumberString) {
 
 function formatPhoneNumberGermany(phoneNumberString) {
     let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-    console.log(cleaned)
-    let replaced = '+49' + cleaned.substr(0, 3) + ' - ' + cleaned.substr(3, 6) + cleaned.substr(9, 2)
+    let replaced = cleaned.substr(0, 3) + ' - ' + cleaned.substr(3, 6) + cleaned.substr(9, 2)
     let match = replaced.match(/(\(?([\d \-\)\–\+\/\(]+)\)?([ .\-–\/]?)([\d]+))/)
 
     if (match) {
@@ -95,6 +96,22 @@ function formatPhoneNumberAlgeria(phoneNumberString) {
         error.style.display = 'none'
         success.style.display = 'block'
         return cleaned.replace('+213', '')
+    }
+
+    success.style.display = 'none'
+    error.style.display = 'block'
+    return null
+}
+
+function formatPhoneNumberJapan(phoneNumberString) {
+    let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    let replaced = cleaned.substr(0, 3) + '-' + cleaned.substr(3, 3) + '-' + cleaned.substr(6, 4)
+    let match = replaced.match(/^(?:\d{10}|\d{3}-\d{3}-\d{4}|\d{2}-\d{4}-\d{4}|\d{3}-\d{4}-\d{4})$/)
+
+    if (match) {
+        error.style.display = 'none'
+        success.style.display = 'block'
+        return replaced.replace('+81', '')
     }
 
     success.style.display = 'none'
